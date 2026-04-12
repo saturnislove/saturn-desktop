@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { AnimatePresence } from 'motion/react';
 import { useDesktopState } from './hooks/useDesktopState';
 import { DesktopIcon } from './components/DesktopIcon';
@@ -14,6 +14,10 @@ import { DesktopItem } from './types';
 import wallpaperImage from 'figma:asset/4d05b3618583678157cf3e4c1d9c5d67cca8a7e3.png';
 
 export default function App() {
+  // Set browser tab title
+  useEffect(() => {
+    document.title = 'saturnislove';
+  }, []);
   const {
     items,
     openFolders,
